@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Laporan Iklan Shopee — wearmodesti — Apr–Mei 2026</title>
+<title>Laporan Iklan — wearmodesti</title>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -26,7 +26,10 @@
     --amber:     #8C5E00;
     --amber-l:   #FDF3DC;
     --red:       #B02020;
-    --red-l:     #FAE8E8;
+    --shopee:    #EE4D2D;
+    --shopee-l:  #FEF0ED;
+    --meta:      #0866FF;
+    --meta-l:    #E7F0FF;
     --r:         8px;
     --r-lg:      14px;
     --shadow:    0 1px 3px rgba(28,26,23,.08), 0 4px 16px rgba(28,26,23,.04);
@@ -41,7 +44,6 @@
     min-height: 100vh;
   }
 
-  /* ── HEADER ── */
   .header {
     background: var(--ink);
     color: #fff;
@@ -49,19 +51,19 @@
     position: sticky; top: 0; z-index: 100;
   }
   .header-inner {
-    max-width: 1120px; margin: 0 auto;
+    max-width: 960px; margin: 0 auto;
     display: flex; align-items: center; justify-content: space-between;
     height: 60px;
   }
   .header-brand { display: flex; align-items: center; gap: 12px; }
-  .shopee-dot {
+  .brand-dot {
     width: 28px; height: 28px; border-radius: 50%;
     background: var(--accent); display: flex; align-items: center;
     justify-content: center; font-size: 14px; flex-shrink: 0;
   }
   .brand-name { font-size: 15px; font-weight: 600; letter-spacing: -.02em; color: #fff; }
   .brand-sub  { font-size: 11px; color: rgba(255,255,255,.45); margin-top: 1px; }
-  .period-badge {
+  .report-count {
     font-family: 'DM Mono', monospace;
     font-size: 11px; color: rgba(255,255,255,.55);
     background: rgba(255,255,255,.08);
@@ -69,153 +71,162 @@
     padding: 5px 12px; border-radius: 20px;
   }
 
-  /* ── LAYOUT ── */
-  .page { max-width: 1120px; margin: 0 auto; padding: 40px 48px 80px; }
+  .page { max-width: 960px; margin: 0 auto; padding: 40px 48px 80px; }
 
-  /* ── SECTION ── */
+  .page-title {
+    font-size: 26px; font-weight: 600; letter-spacing: -.03em;
+    color: var(--ink); margin-bottom: 6px;
+  }
+  .page-sub {
+    font-size: 13px; color: var(--ink3); margin-bottom: 28px;
+  }
+
+  /* Filter tabs */
+  .filter-bar {
+    display: flex; gap: 6px; margin-bottom: 28px;
+  }
+  .filter-btn {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 12px; font-weight: 500;
+    padding: 6px 14px; border-radius: 20px;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    color: var(--ink2);
+    cursor: pointer;
+    transition: all .15s;
+    display: flex; align-items: center; gap: 6px;
+  }
+  .filter-btn:hover { border-color: var(--border2); color: var(--ink); }
+  .filter-btn.active {
+    background: var(--ink); border-color: var(--ink); color: #fff;
+  }
+  .filter-btn.active.shopee { background: var(--shopee); border-color: var(--shopee); }
+  .filter-btn.active.meta   { background: var(--meta);   border-color: var(--meta); }
+  .filter-dot {
+    width: 6px; height: 6px; border-radius: 50%;
+  }
+  .filter-btn.shopee .filter-dot { background: var(--shopee); }
+  .filter-btn.meta   .filter-dot { background: var(--meta); }
+  .filter-btn.active .filter-dot { background: rgba(255,255,255,.7); }
+
   .section-eyebrow {
     font-size: 10px; font-weight: 600; letter-spacing: .1em;
     text-transform: uppercase; color: var(--ink3);
-    margin-bottom: 14px; margin-top: 44px;
+    margin-bottom: 14px;
     display: flex; align-items: center; gap: 8px;
   }
   .section-eyebrow::after {
     content: ''; flex: 1; height: 1px; background: var(--border);
   }
-  .section-eyebrow:first-child { margin-top: 0; }
 
-  /* ── HIGHLIGHT GRID ── */
-  .kpi-grid {
+  .report-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 14px;
   }
-  .kpi-card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: var(--r-lg);
-    padding: 20px 22px;
-    box-shadow: var(--shadow);
-    transition: transform .15s, box-shadow .15s;
-  }
-  .kpi-card:hover { transform: translateY(-2px); box-shadow: 0 4px 20px rgba(28,26,23,.1); }
-  .kpi-card.featured { background: var(--ink); border-color: var(--ink); }
-  .kpi-card.featured .kpi-label { color: rgba(255,255,255,.5); }
-  .kpi-card.featured .kpi-value { color: #fff; }
-  .kpi-card.featured .kpi-sub { color: rgba(255,255,255,.4); }
-  .kpi-label {
-    font-size: 11px; font-weight: 500; color: var(--ink3);
-    margin-bottom: 8px; letter-spacing: .01em;
-  }
-  .kpi-value {
-    font-family: 'DM Mono', monospace;
-    font-size: 26px; font-weight: 500; color: var(--ink);
-    line-height: 1; letter-spacing: -.02em;
-  }
-  .kpi-value.accent { color: var(--accent); }
-  .kpi-value.green  { color: var(--green); }
-  .kpi-sub { font-size: 11px; color: var(--ink3); margin-top: 5px; }
 
-  /* ── TABLE ── */
-  .table-wrap {
+  .report-card {
     background: var(--surface);
     border: 1px solid var(--border);
     border-radius: var(--r-lg);
+    padding: 22px 24px;
+    box-shadow: var(--shadow);
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    transition: transform .15s, box-shadow .15s, border-color .15s;
+    position: relative;
     overflow: hidden;
-    box-shadow: var(--shadow);
   }
-  table { width: 100%; border-collapse: collapse; }
-  thead tr { background: var(--surface2); }
-  th {
-    font-size: 10px; font-weight: 600; letter-spacing: .07em;
-    text-transform: uppercase; color: var(--ink3);
-    padding: 11px 16px; text-align: left; white-space: nowrap;
-    border-bottom: 1px solid var(--border);
+  .report-card[data-platform="shopee"]::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0;
+    height: 3px; background: var(--shopee); opacity: 0;
+    transition: opacity .15s;
   }
-  th.r, td.r { text-align: right; }
-  td {
-    padding: 14px 16px; font-size: 13px;
-    border-bottom: 1px solid var(--border);
-    vertical-align: middle; color: var(--ink);
+  .report-card[data-platform="meta"]::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0;
+    height: 3px; background: var(--meta); opacity: 0;
+    transition: opacity .15s;
   }
-  tr:last-child td { border-bottom: none; }
-  tbody tr:hover td { background: var(--surface2); }
-  tr.total-row td {
-    background: var(--surface2); font-weight: 600;
-    border-top: 1px solid var(--border2);
-    font-size: 13px;
+  .report-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 24px rgba(28,26,23,.12);
+    border-color: var(--border2);
   }
-  .prod-name { font-weight: 500; line-height: 1.35; }
-  .prod-sub  { font-size: 11px; color: var(--ink3); margin-top: 2px; }
-  .mono { font-family: 'DM Mono', monospace; font-size: 12px; }
+  .report-card:hover::before { opacity: 1; }
 
-  /* ── BADGES ── */
-  .badge {
-    display: inline-flex; align-items: center; gap: 4px;
+  .card-header { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 2px; }
+
+  .card-period {
+    font-size: 16px; font-weight: 600; letter-spacing: -.02em;
+    color: var(--ink);
+  }
+
+  .platform-badge {
     font-size: 10px; font-weight: 600; letter-spacing: .03em;
-    padding: 3px 8px; border-radius: 20px; white-space: nowrap;
+    padding: 3px 8px; border-radius: 20px;
+    flex-shrink: 0; margin-top: 2px;
   }
-  .badge-dot { width: 5px; height: 5px; border-radius: 50%; background: currentColor; }
-  .bg-green  { background: var(--green-l); color: var(--green); }
-  .bg-ink    { background: var(--surface2); color: var(--ink2); }
+  .platform-badge.shopee { background: var(--shopee-l); color: var(--shopee); }
+  .platform-badge.meta   { background: var(--meta-l);   color: var(--meta); }
 
-  /* ── ROAS PILL ── */
-  .roas {
+  .card-date {
     font-family: 'DM Mono', monospace;
-    font-size: 11px; font-weight: 500;
-    padding: 3px 8px; border-radius: 6px; white-space: nowrap;
+    font-size: 10px; color: var(--ink3); margin-bottom: 18px;
   }
-  .roas-5  { background: var(--green-l); color: var(--green); }
-  .roas-3  { background: var(--blue-l);  color: var(--blue); }
-  .roas-1  { background: var(--amber-l); color: var(--amber); }
-  .roas-0  { background: var(--red-l);   color: var(--red); }
 
-  /* ── ACOS BAR ── */
-  .acos-wrap { display: flex; align-items: center; gap: 8px; }
-  .acos-bg   { flex: 1; height: 3px; background: var(--border); border-radius: 2px; min-width: 48px; }
-  .acos-fill { height: 3px; border-radius: 2px; }
-  .acos-good { background: var(--green); }
-  .acos-ok   { background: var(--blue); }
-  .acos-warn { background: #D4891A; }
-  .acos-bad  { background: var(--red); }
-  .acos-val  { font-family: 'DM Mono', monospace; font-size: 11px; white-space: nowrap; }
-  .acos-val.bad { color: var(--red); font-weight: 500; }
-
-  /* ── INSIGHTS ── */
-  .insight-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-  .insight-card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: var(--r-lg);
-    padding: 20px 22px;
-    box-shadow: var(--shadow);
-    border-left: 3px solid var(--border2);
+  .card-stats {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 12px; margin-bottom: 18px;
   }
-  .insight-card.green  { border-left-color: var(--green); }
-  .insight-card.amber  { border-left-color: #D4891A; }
-  .insight-card.red    { border-left-color: var(--red); }
-  .insight-card.blue   { border-left-color: var(--blue); }
-  .insight-title { font-size: 13px; font-weight: 600; margin-bottom: 6px; line-height: 1.35; }
-  .insight-body  { font-size: 12px; color: var(--ink2); line-height: 1.65; }
-
-  /* ── RECOMMENDATION ── */
-  .rec-list { display: flex; flex-direction: column; gap: 8px; }
-  .rec-item {
-    display: flex; gap: 14px; align-items: flex-start;
-    background: var(--surface); border: 1px solid var(--border);
-    border-radius: var(--r); padding: 14px 16px;
-    box-shadow: var(--shadow);
+  .stat-label {
+    font-size: 10px; font-weight: 500; color: var(--ink3);
+    letter-spacing: .02em; margin-bottom: 3px;
   }
-  .rec-num {
-    width: 24px; height: 24px; border-radius: 50%;
-    background: var(--ink); color: #fff;
-    font-size: 11px; font-weight: 700;
+  .stat-value {
+    font-family: 'DM Mono', monospace;
+    font-size: 15px; font-weight: 500; color: var(--ink);
+    line-height: 1;
+  }
+  .stat-value.green  { color: var(--green); }
+  .stat-value.accent { color: var(--accent); }
+
+  .card-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    padding-top: 14px;
+    border-top: 1px solid var(--border);
+  }
+  .card-created { font-size: 11px; color: var(--ink3); }
+  .card-arrow {
+    width: 26px; height: 26px; border-radius: 50%;
+    background: var(--surface2); border: 1px solid var(--border);
     display: flex; align-items: center; justify-content: center;
-    flex-shrink: 0; margin-top: 1px;
+    font-size: 12px; color: var(--ink2);
+    transition: background .15s, border-color .15s, color .15s;
   }
-  .rec-text { font-size: 13px; color: var(--ink); line-height: 1.6; }
+  .report-card:hover .card-arrow {
+    background: var(--ink); border-color: var(--ink); color: #fff;
+  }
 
-  /* ── FOOTER ── */
+  .roas-pill {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px; font-weight: 500;
+    padding: 3px 8px; border-radius: 6px;
+  }
+  .roas-5 { background: var(--green-l); color: var(--green); }
+  .roas-3 { background: var(--blue-l);  color: var(--blue); }
+  .roas-1 { background: var(--amber-l); color: var(--amber); }
+  .roas-0 { background: #FAE8E8;        color: var(--red); }
+
+  .empty-state {
+    grid-column: 1 / -1;
+    text-align: center; padding: 60px 24px; color: var(--ink3);
+  }
+  .empty-state .icon { font-size: 36px; margin-bottom: 12px; }
+  .empty-state p { font-size: 13px; }
+
   .footer {
     margin-top: 56px; padding-top: 24px;
     border-top: 1px solid var(--border);
@@ -224,20 +235,13 @@
     font-family: 'DM Mono', monospace;
   }
 
-  /* ── A/B NOTE ── */
-  .ab-note {
-    background: var(--blue-l); border: 1px solid #B5CDE8;
-    border-radius: var(--r); padding: 12px 16px;
-    font-size: 12px; color: var(--blue); line-height: 1.6;
-    margin-top: 12px;
-  }
+  .hidden { display: none !important; }
 
   @media (max-width: 768px) {
     .page { padding: 24px 20px 60px; }
     .header { padding: 0 20px; }
-    .kpi-grid { grid-template-columns: repeat(2, 1fr); }
-    .insight-grid { grid-template-columns: 1fr; }
-    .table-wrap { overflow-x: auto; }
+    .report-grid { grid-template-columns: 1fr; }
+    .footer { flex-direction: column; gap: 4px; }
   }
 </style>
 </head>
@@ -246,259 +250,116 @@
 <header class="header">
   <div class="header-inner">
     <div class="header-brand">
-      <div class="shopee-dot">🛍</div>
+      <div class="brand-dot">📊</div>
       <div>
         <div class="brand-name">wearmodesti</div>
-        <div class="brand-sub">Laporan Kinerja Iklan · Shopee Indonesia</div>
+        <div class="brand-sub">Direktori Laporan Iklan</div>
       </div>
     </div>
-    <div class="period-badge">20 Apr – 19 Mei 2026</div>
+    <div class="report-count" id="report-count">— laporan</div>
   </div>
 </header>
 
 <div class="page">
+  <h1 class="page-title">Laporan Iklan</h1>
+  <p class="page-sub">Pilih periode untuk melihat laporan lengkap performa iklan.</p>
 
-  <!-- KPI -->
-  <p class="section-eyebrow">Performa Seluruh Iklan</p>
-  <div class="kpi-grid">
-    <div class="kpi-card featured">
-      <div class="kpi-label">Penjualan dari Iklan</div>
-      <div class="kpi-value">Rp 6,3 jt</div>
-      <div class="kpi-sub">Total omzet 5 iklan aktif</div>
-    </div>
-    <div class="kpi-card">
-      <div class="kpi-label">ROAS Keseluruhan</div>
-      <div class="kpi-value green">4,35x</div>
-      <div class="kpi-sub">Return on Ad Spend</div>
-    </div>
-    <div class="kpi-card">
-      <div class="kpi-label">Total Biaya Iklan</div>
-      <div class="kpi-value">Rp 1,46 jt</div>
-      <div class="kpi-sub">Dari budget Rp 1,65 jt</div>
-    </div>
-    <div class="kpi-card">
-      <div class="kpi-label">Produk Terjual</div>
-      <div class="kpi-value">41 unit</div>
-      <div class="kpi-sub">Dari 4 iklan produk</div>
-    </div>
-    <div class="kpi-card">
-      <div class="kpi-label">Total Dilihat</div>
-      <div class="kpi-value">35.773</div>
-      <div class="kpi-sub">Tayangan semua iklan</div>
-    </div>
-    <div class="kpi-card">
-      <div class="kpi-label">Total Klik</div>
-      <div class="kpi-value">1.753</div>
-      <div class="kpi-sub">Semua iklan aktif</div>
-    </div>
-    <div class="kpi-card">
-      <div class="kpi-label">Pesanan</div>
-      <div class="kpi-value">32</div>
-      <div class="kpi-sub">Konversi langsung</div>
-    </div>
-    <div class="kpi-card">
-      <div class="kpi-label">CTR Rata-rata</div>
-      <div class="kpi-value">4,90%</div>
-      <div class="kpi-sub">3 iklan produk utama</div>
-    </div>
+  <div class="filter-bar" id="filter-bar">
+    <button class="filter-btn active" data-filter="all">Semua</button>
+    <button class="filter-btn shopee" data-filter="shopee">
+      <span class="filter-dot"></span>Shopee
+    </button>
+    <button class="filter-btn meta" data-filter="meta">
+      <span class="filter-dot"></span>Meta
+    </button>
   </div>
 
-  <!-- TABLE -->
-  <p class="section-eyebrow">Performa per Iklan</p>
-  <div class="table-wrap">
-    <table>
-      <thead>
-        <tr>
-          <th>Nama Iklan</th>
-          <th>Periode</th>
-          <th>Status</th>
-          <th class="r">Dilihat</th>
-          <th class="r">Klik</th>
-          <th class="r">CTR</th>
-          <th class="r">Terjual</th>
-          <th class="r">Omzet</th>
-          <th class="r">Biaya</th>
-          <th class="r">ROAS</th>
-          <th>ACOS</th>
-        </tr>
-      </thead>
-      <tbody>
-        <!-- Nara Prayer Set -->
-        <tr>
-          <td>
-            <div class="prod-name">Nara Prayer Set</div>
-            <div class="prod-sub">Mukena Travel Mini Pouch</div>
-          </td>
-          <td class="mono" style="color:var(--ink3);font-size:11px">14–19 Mei</td>
-          <td><span class="badge bg-green"><span class="badge-dot"></span>Berjalan</span></td>
-          <td class="r mono">5.035</td>
-          <td class="r mono">297</td>
-          <td class="r mono">5,90%</td>
-          <td class="r mono">7</td>
-          <td class="r mono" style="white-space:nowrap">Rp 954.200</td>
-          <td class="r mono" style="white-space:nowrap">Rp 122.566</td>
-          <td class="r"><span class="roas roas-5">7,79x</span></td>
-          <td>
-            <div class="acos-wrap">
-              <div class="acos-bg"><div class="acos-fill acos-good" style="width:13%"></div></div>
-              <span class="acos-val">12,84%</span>
-            </div>
-          </td>
-        </tr>
-        <!-- NAIRA SHORT -->
-        <tr>
-          <td>
-            <div class="prod-name">NAIRA SHORT Bergo</div>
-            <div class="prod-sub">Hijab Instant | Tencel</div>
-          </td>
-          <td class="mono" style="color:var(--ink3);font-size:11px">20 Apr–1 Mei</td>
-          <td><span class="badge bg-ink">Berakhir</span></td>
-          <td class="r mono">5.142</td>
-          <td class="r mono">280</td>
-          <td class="r mono">5,45%</td>
-          <td class="r mono">12</td>
-          <td class="r mono" style="white-space:nowrap">Rp 1.871.350</td>
-          <td class="r mono" style="white-space:nowrap">Rp 300.000</td>
-          <td class="r"><span class="roas roas-5">6,24x</span></td>
-          <td>
-            <div class="acos-wrap">
-              <div class="acos-bg"><div class="acos-fill acos-ok" style="width:16%"></div></div>
-              <span class="acos-val">16,03%</span>
-            </div>
-          </td>
-        </tr>
-        <!-- NALA ACTIVE SHORT -->
-        <tr>
-          <td>
-            <div class="prod-name">NALA ACTIVE SHORT Bergo</div>
-            <div class="prod-sub">Hijab Instant | Tencel</div>
-          </td>
-          <td class="mono" style="color:var(--ink3);font-size:11px">20 Apr–19 Mei</td>
-          <td><span class="badge bg-green"><span class="badge-dot"></span>Berjalan</span></td>
-          <td class="r mono">21.588</td>
-          <td class="r mono">996</td>
-          <td class="r mono">4,61%</td>
-          <td class="r mono">21</td>
-          <td class="r mono" style="white-space:nowrap">Rp 3.334.400</td>
-          <td class="r mono" style="white-space:nowrap">Rp 639.517</td>
-          <td class="r"><span class="roas roas-5">5,21x</span></td>
-          <td>
-            <div class="acos-wrap">
-              <div class="acos-bg"><div class="acos-fill acos-warn" style="width:19%"></div></div>
-              <span class="acos-val">19,18%</span>
-            </div>
-          </td>
-        </tr>
-        <!-- CALLA -->
-        <tr>
-          <td>
-            <div class="prod-name">CALLA Instant Segitiga</div>
-            <div class="prod-sub">Hijab Instant | Tencel</div>
-          </td>
-          <td class="mono" style="color:var(--ink3);font-size:11px">2–13 Mei</td>
-          <td><span class="badge bg-ink">Berakhir</span></td>
-          <td class="r mono">4.008</td>
-          <td class="r mono">180</td>
-          <td class="r mono">4,49%</td>
-          <td class="r mono">1</td>
-          <td class="r mono" style="white-space:nowrap">Rp 170.050</td>
-          <td class="r mono" style="white-space:nowrap">Rp 93.421</td>
-          <td class="r"><span class="roas roas-1">1,82x</span></td>
-          <td>
-            <div class="acos-wrap">
-              <div class="acos-bg"><div class="acos-fill acos-bad" style="width:55%"></div></div>
-              <span class="acos-val bad">54,94%</span>
-            </div>
-          </td>
-        </tr>
-        <!-- Iklan Toko -->
-        <tr>
-          <td>
-            <div class="prod-name">Iklan Toko</div>
-            <div class="prod-sub">Rp 10.000/hari × 30 hari</div>
-          </td>
-          <td class="mono" style="color:var(--ink3);font-size:11px">20 Apr–19 Mei</td>
-          <td><span class="badge bg-green"><span class="badge-dot"></span>Berjalan</span></td>
-          <td class="r mono" style="color:var(--ink3)">—</td>
-          <td class="r mono" style="color:var(--ink3)">—</td>
-          <td class="r mono" style="color:var(--ink3)">—</td>
-          <td class="r mono" style="color:var(--ink3)">0</td>
-          <td class="r mono" style="color:var(--ink3)">Rp 0</td>
-          <td class="r mono" style="white-space:nowrap">Rp 300.000</td>
-          <td class="r"><span class="roas roas-0">0x</span></td>
-          <td><span style="font-size:11px;color:var(--ink3)">Tidak ada penjualan</span></td>
-        </tr>
-        <!-- Total -->
-        <tr class="total-row">
-          <td colspan="3">Total Keseluruhan</td>
-          <td class="r mono">35.773</td>
-          <td class="r mono">1.753</td>
-          <td class="r mono">—</td>
-          <td class="r mono">41</td>
-          <td class="r mono" style="white-space:nowrap">Rp 6.329.000</td>
-          <td class="r mono" style="white-space:nowrap">Rp 1.455.504</td>
-          <td class="r"><span class="roas roas-3">4,35x</span></td>
-          <td><span style="font-size:11px;color:var(--ink2)">~23%</span></td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-
-  <!-- INSIGHTS -->
-  <p class="section-eyebrow">Analisis & Insight</p>
-  <div class="insight-grid">
-    <div class="insight-card green">
-      <div class="insight-title">Nara Prayer Set — kejutan terbesar periode ini</div>
-      <div class="insight-body">Baru aktif 6 hari namun langsung menorehkan ROAS 7,79x dan ACOS 12,84%, performa terbaik di antara semua iklan. CTR 5,90% juga tertinggi. Produk ini jelas memiliki demand kuat dan layak diprioritaskan selama stok tersedia.</div>
-    </div>
-    <div class="insight-card green">
-      <div class="insight-title">NAIRA SHORT — konversi langsung & efisien</div>
-      <div class="insight-body">ROAS 6,24x dengan ACOS 16,03% dalam 12 hari. Hampir semua konversinya langsung (8 dari 9), menandakan calon pembeli tidak butuh waktu pertimbangan panjang. Produk ini layak mendapat periode iklan lebih panjang di bulan depan.</div>
-    </div>
-    <div class="insight-card blue">
-      <div class="insight-title">NALA ACTIVE SHORT — tulang punggung, tapi perlu optimasi bid</div>
-      <div class="insight-body">Omzet terbesar Rp 3,3 juta, namun ROAS turun dari 12,59x (periode lalu) menjadi 5,21x. Biaya Rp 639.517 cukup besar untuk full 30 hari. Masih sangat profitable, namun bid perlu dievaluasi agar efisiensi meningkat.</div>
-    </div>
-    <div class="insight-card red">
-      <div class="insight-title">CALLA Instant Segitiga — CTR bagus, konversi gagal</div>
-      <div class="insight-body">CTR 4,49% menunjukkan orang tertarik klik, tapi hanya 1 konversi dari 180 klik dalam 12 hari (ACOS 54,94%). Masalah ada di halaman produk, bukan di iklan. Perlu evaluasi foto, deskripsi, harga, dan review sebelum diiklankan kembali.</div>
-    </div>
-    <div class="insight-card blue">
-      <div class="insight-title">NAIRA vs CALLA — hasil A/B test 12 hari</div>
-      <div class="insight-body">Keduanya berjalan 12 hari di slot yang sama dengan budget identik. NAIRA: ROAS 6,24x, 12 unit terjual. CALLA: ROAS 1,82x, 1 unit terjual. Hasilnya jelas — NAIRA jauh lebih siap untuk diiklankan dibanding CALLA di kondisi saat ini.</div>
-    </div>
-  </div>
-
-  <!-- REKOMENDASI -->
-  <p class="section-eyebrow">Rekomendasi Periode Berikutnya</p>
-  <div class="rec-list">
-    <div class="rec-item">
-      <div class="rec-num">1</div>
-      <div class="rec-text"><strong>Nara Prayer Set jadi prioritas utama</strong> — selama stok tersedia, iklan ini harus jalan. Baru 6 hari tapi sudah ROAS 7,79x. Jalankan full period di bulan depan untuk melihat potensi penuhnya.</div>
-    </div>
-    <div class="rec-item">
-      <div class="rec-num">2</div>
-      <div class="rec-text"><strong>NAIRA SHORT dilanjutkan dengan periode lebih panjang</strong> — bukan hanya 12 hari. Konversi langsung tinggi menunjukkan produk ini tidak butuh "warming up". Layak mendapat slot full period.</div>
-    </div>
-    <div class="rec-item">
-      <div class="rec-num">3</div>
-      <div class="rec-text"><strong>NALA ACTIVE SHORT tetap lanjut</strong>, namun evaluasi bid agar biaya lebih efisien. Target ACOS di bawah 15% dari saat ini 19%.</div>
-    </div>
-    <div class="rec-item">
-      <div class="rec-num">4</div>
-      <div class="rec-text"><strong>CALLA Instant Segitiga jangan diiklankan dulu</strong> sebelum halaman produknya dioptimalkan. Prioritaskan perbaikan foto utama, deskripsi, harga kompetitif, dan kumpulkan minimal 10 review terlebih dahulu.</div>
-    </div>
-    <div class="rec-item">
-      <div class="rec-num">5</div>
-      <div class="rec-text"><strong>Evaluasi ulang Iklan Toko</strong> — dua periode berturut-turut tanpa konversi. Pertimbangkan mencoba keyword dengan volume pencarian lebih tinggi, atau alihkan sebagian budget ke iklan produk yang sudah terbukti.</div>
-    </div>
-  </div>
+  <p class="section-eyebrow" id="section-label">Semua Laporan</p>
+  <div class="report-grid" id="report-grid"></div>
 
   <div class="footer">
-    <span>Laporan dibuat: 19 Mei 2026</span>
-    <span>wearmodesti · Shopee Indonesia · Data: Shopee Seller Centre</span>
+    <span>wearmodesti</span>
+    <span>Shopee · Meta Ads</span>
   </div>
-
 </div>
+
+<script src="reports.js"></script>
+<script>
+  const grid = document.getElementById('report-grid');
+  const countEl = document.getElementById('report-count');
+  const sectionLabel = document.getElementById('section-label');
+
+  const PLATFORM_LABEL = { shopee: 'Shopee', meta: 'Meta Ads' };
+
+  function renderCards(filter) {
+    const sorted = [...REPORTS].reverse();
+    const filtered = filter === 'all' ? sorted : sorted.filter(r => r.platform === filter);
+
+    grid.innerHTML = '';
+
+    if (filtered.length === 0) {
+      grid.innerHTML = `<div class="empty-state"><div class="icon">📋</div><p>Tidak ada laporan untuk platform ini.</p></div>`;
+      return;
+    }
+
+    filtered.forEach(r => {
+      const card = document.createElement('a');
+      card.href = r.file;
+      card.className = 'report-card';
+      card.dataset.platform = r.platform;
+      card.innerHTML = `
+        <div class="card-header">
+          <div class="card-period">${r.period}</div>
+          <span class="platform-badge ${r.platform}">${PLATFORM_LABEL[r.platform] || r.platform}</span>
+        </div>
+        <div class="card-date">${r.dateLabel}</div>
+        <div class="card-stats">
+          <div>
+            <div class="stat-label">Penjualan Iklan</div>
+            <div class="stat-value accent">${r.highlights.revenue}</div>
+          </div>
+          <div>
+            <div class="stat-label">ROAS</div>
+            <div class="stat-value green">${r.highlights.roas}</div>
+          </div>
+          <div>
+            <div class="stat-label">Total Spend</div>
+            <div class="stat-value">${r.highlights.spend}</div>
+          </div>
+          <div>
+            <div class="stat-label">Pesanan</div>
+            <div class="stat-value">${r.highlights.orders}</div>
+          </div>
+        </div>
+        <div class="card-footer">
+          <span class="card-created">Dibuat ${r.created}</span>
+          <span class="card-arrow">→</span>
+        </div>
+      `;
+      grid.appendChild(card);
+    });
+  }
+
+  // Filter logic
+  let activeFilter = 'all';
+
+  document.getElementById('filter-bar').addEventListener('click', e => {
+    const btn = e.target.closest('[data-filter]');
+    if (!btn) return;
+    activeFilter = btn.dataset.filter;
+
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+
+    const labels = { all: 'Semua Laporan', shopee: 'Laporan Shopee', meta: 'Laporan Meta Ads' };
+    sectionLabel.textContent = labels[activeFilter] || 'Semua Laporan';
+
+    renderCards(activeFilter);
+  });
+
+  // Init
+  countEl.textContent = REPORTS.length + ' laporan';
+  renderCards('all');
+</script>
 </body>
 </html>

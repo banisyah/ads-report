@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Laporan Iklan Shopee — wearmodesti — Mei–Jun 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg:        #F5F3EE;
+    --surface:   #FDFCFA;
+    --surface2:  #F0EDE7;
+    --border:    #E2DDD6;
+    --border2:   #CEC9C0;
+    --ink:       #1C1A17;
+    --ink2:      #5C5850;
+    --ink3:      #9C968D;
+    --accent:    #C4521A;
+    --accent-l:  #F5E8DF;
+    --green:     #2A6B3C;
+    --green-l:   #E3F0E8;
+    --blue:      #1A5C9C;
+    --blue-l:    #DDE9F5;
+    --amber:     #8C5E00;
+    --amber-l:   #FDF3DC;
+    --red:       #B02020;
+    --red-l:     #FAE8E8;
+    --r:         8px;
+    --r-lg:      14px;
+    --shadow:    0 1px 3px rgba(28,26,23,.08), 0 4px 16px rgba(28,26,23,.04);
+  }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    min-height: 100vh;
+  }
+
+  /* HEADER */
+  .header {
+    background: var(--ink);
+    color: #fff;
+    padding: 0 48px;
+    position: sticky; top: 0; z-index: 100;
+  }
+  .header-inner {
+    max-width: 1120px; margin: 0 auto;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 60px;
+  }
+  .header-brand { display: flex; align-items: center; gap: 12px; }
+  .shopee-dot {
+    width: 28px; height: 28px; border-radius: 50%;
+    background: var(--accent); display: flex; align-items: center;
+    justify-content: center; font-size: 14px; flex-shrink: 0;
+  }
+  .brand-name { font-size: 15px; font-weight: 600; letter-spacing: -.02em; color: #fff; }
+  .brand-sub  { font-size: 11px; color: rgba(255,255,255,.45); margin-top: 1px; }
+  .period-badge {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px; color: rgba(255,255,255,.55);
+    background: rgba(255,255,255,.08);
+    border: 1px solid rgba(255,255,255,.12);
+    padding: 5px 12px; border-radius: 20px;
+  }
+
+  /* LAYOUT */
+  .page { max-width: 1120px; margin: 0 auto; padding: 40px 48px 80px; }
+
+  /* SECTION */
+  .section-eyebrow {
+    font-size: 10px; font-weight: 600; letter-spacing: .1em;
+    text-transform: uppercase; color: var(--ink3);
+    margin-bottom: 14px; margin-top: 44px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .section-eyebrow::after {
+    content: ''; flex: 1; height: 1px; background: var(--border);
+  }
+  .section-eyebrow:first-child { margin-top: 0; }
+
+  /* EXECUTIVE SUMMARY */
+  .exec-summary {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--r-lg);
+    padding: 22px 26px;
+    box-shadow: var(--shadow);
+    font-size: 14px;
+    color: var(--ink2);
+    line-height: 1.75;
+    border-left: 3px solid var(--accent);
+  }
+
+  /* KPI GRID */
+  .kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+  }
+  .kpi-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--r-lg);
+    padding: 20px 22px;
+    box-shadow: var(--shadow);
+    transition: transform .15s, box-shadow .15s;
+  }
+  .kpi-card:hover { transform: translateY(-2px); box-shadow: 0 4px 20px rgba(28,26,23,.1); }
+  .kpi-card.featured { background: var(--ink); border-color: var(--ink); }
+  .kpi-card.featured .kpi-label { color: rgba(255,255,255,.5); }
+  .kpi-card.featured .kpi-value { color: #fff; }
+  .kpi-card.featured .kpi-sub { color: rgba(255,255,255,.4); }
+  .kpi-label {
+    font-size: 11px; font-weight: 500; color: var(--ink3);
+    margin-bottom: 8px; letter-spacing: .01em;
+  }
+  .kpi-value {
+    font-family: 'DM Mono', monospace;
+    font-size: 26px; font-weight: 500; color: var(--ink);
+    line-height: 1; letter-spacing: -.02em;
+  }
+  .kpi-value.accent { color: var(--accent); }
+  .kpi-value.green  { color: var(--green); }
+  .kpi-sub { font-size: 11px; color: var(--ink3); margin-top: 5px; }
+
+  /* TABLE */
+  .table-wrap {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--r-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+  }
+  table { width: 100%; border-collapse: collapse; }
+  thead tr { background: var(--surface2); }
+  th {
+    font-size: 10px; font-weight: 600; letter-spacing: .07em;
+    text-transform: uppercase; color: var(--ink3);
+    padding: 11px 16px; text-align: left; white-space: nowrap;
+    border-bottom: 1px solid var(--border);
+  }
+  th.r, td.r { text-align: right; }
+  td {
+    padding: 14px 16px; font-size: 13px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: middle; color: var(--ink);
+  }
+  tr:last-child td { border-bottom: none; }
+  tbody tr:hover td { background: var(--surface2); }
+  tr.total-row td {
+    background: var(--surface2); font-weight: 600;
+    border-top: 1px solid var(--border2);
+    font-size: 13px;
+  }
+  .prod-name { font-weight: 500; line-height: 1.35; }
+  .prod-sub  { font-size: 11px; color: var(--ink3); margin-top: 2px; }
+  .mono { font-family: 'DM Mono', monospace; font-size: 12px; }
+
+  /* BADGES */
+  .badge {
+    display: inline-flex; align-items: center; gap: 4px;
+    font-size: 10px; font-weight: 600; letter-spacing: .03em;
+    padding: 3px 8px; border-radius: 20px; white-space: nowrap;
+  }
+  .badge-dot { width: 5px; height: 5px; border-radius: 50%; background: currentColor; }
+  .bg-green  { background: var(--green-l); color: var(--green); }
+  .bg-ink    { background: var(--surface2); color: var(--ink2); }
+
+  /* ROAS PILL */
+  .roas {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px; font-weight: 500;
+    padding: 3px 8px; border-radius: 6px; white-space: nowrap;
+  }
+  .roas-5  { background: var(--green-l); color: var(--green); }
+  .roas-3  { background: var(--blue-l);  color: var(--blue); }
+  .roas-1  { background: var(--amber-l); color: var(--amber); }
+  .roas-0  { background: var(--red-l);   color: var(--red); }
+
+  /* ACOS BAR */
+  .acos-wrap { display: flex; align-items: center; gap: 8px; }
+  .acos-bg   { flex: 1; height: 3px; background: var(--border); border-radius: 2px; min-width: 48px; }
+  .acos-fill { height: 3px; border-radius: 2px; }
+  .acos-good { background: var(--green); }
+  .acos-ok   { background: var(--blue); }
+  .acos-warn { background: #D4891A; }
+  .acos-bad  { background: var(--red); }
+  .acos-val  { font-family: 'DM Mono', monospace; font-size: 11px; white-space: nowrap; }
+  .acos-val.bad { color: var(--red); font-weight: 500; }
+
+  /* VOUCHER ROW */
+  .voucher-pill {
+    display: inline-flex; align-items: center; gap: 4px;
+    font-size: 10px; font-weight: 500;
+    background: var(--amber-l); color: var(--amber);
+    padding: 2px 7px; border-radius: 10px; margin-top: 3px;
+  }
+
+  /* INSIGHTS */
+  .insight-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .insight-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--r-lg);
+    padding: 20px 22px;
+    box-shadow: var(--shadow);
+    border-left: 3px solid var(--border2);
+  }
+  .insight-card.green  { border-left-color: var(--green); }
+  .insight-card.amber  { border-left-color: #D4891A; }
+  .insight-card.red    { border-left-color: var(--red); }
+  .insight-card.blue   { border-left-color: var(--blue); }
+  .insight-title { font-size: 13px; font-weight: 600; margin-bottom: 6px; line-height: 1.35; }
+  .insight-body  { font-size: 12px; color: var(--ink2); line-height: 1.65; }
+
+  /* RECOMMENDATION */
+  .rec-list { display: flex; flex-direction: column; gap: 8px; }
+  .rec-item {
+    display: flex; gap: 14px; align-items: flex-start;
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: var(--r); padding: 14px 16px;
+    box-shadow: var(--shadow);
+  }
+  .rec-num {
+    width: 24px; height: 24px; border-radius: 50%;
+    background: var(--ink); color: #fff;
+    font-size: 11px; font-weight: 700;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0; margin-top: 1px;
+  }
+  .rec-text { font-size: 13px; color: var(--ink); line-height: 1.6; }
+
+  /* DATA NOTE */
+  .data-note {
+    background: var(--blue-l); border: 1px solid #B5CDE8;
+    border-radius: var(--r); padding: 12px 16px;
+    font-size: 12px; color: var(--blue); line-height: 1.6;
+    margin-top: 12px;
+  }
+
+  /* FOOTER */
+  .footer {
+    margin-top: 56px; padding-top: 24px;
+    border-top: 1px solid var(--border);
+    display: flex; justify-content: space-between;
+    font-size: 11px; color: var(--ink3);
+    font-family: 'DM Mono', monospace;
+  }
+
+  @media (max-width: 768px) {
+    .page { padding: 24px 20px 60px; }
+    .header { padding: 0 20px; }
+    .kpi-grid { grid-template-columns: repeat(2, 1fr); }
+    .insight-grid { grid-template-columns: 1fr; }
+    .table-wrap { overflow-x: auto; }
+  }
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-inner">
+    <div class="header-brand">
+      <div class="shopee-dot">🛍</div>
+      <div>
+        <div class="brand-name">wearmodesti</div>
+        <div class="brand-sub">Laporan Kinerja Iklan · Shopee Indonesia</div>
+      </div>
+    </div>
+    <div class="period-badge">20 Mei – 19 Jun 2026</div>
+  </div>
+</header>
+
+<div class="page">
+
+  <!-- RINGKASAN EKSEKUTIF -->
+  <p class="section-eyebrow">Ringkasan Eksekutif</p>
+  <div class="exec-summary">
+    Periode 20 Mei hingga 19 Juni 2026 mencakup 4 iklan produk aktif dari lini modest wear dan hijab wearmodesti. Total belanja iklan sebesar <strong>Rp 1.778.876</strong> menghasilkan penjualan dari iklan sebesar <strong>Rp 9,7 juta</strong> dengan ROAS keseluruhan <strong>5,43x</strong>. Nara Prayer Set menjadi kontributor omzet terbesar sekaligus satu-satunya iklan yang masih aktif berjalan saat laporan ini dibuat.
+  </div>
+
+  <!-- KPI -->
+  <p class="section-eyebrow">Performa Seluruh Iklan</p>
+  <div class="kpi-grid">
+    <div class="kpi-card featured">
+      <div class="kpi-label">Penjualan dari Iklan</div>
+      <div class="kpi-value">Rp 9,7 jt</div>
+      <div class="kpi-sub">Total omzet 4 iklan aktif</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-label">ROAS Keseluruhan</div>
+      <div class="kpi-value green">5,43x</div>
+      <div class="kpi-sub">Return on Ad Spend</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-label">Total Biaya Iklan</div>
+      <div class="kpi-value">Rp 1,78 jt</div>
+      <div class="kpi-sub">Dari 4 iklan produk</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-label">Produk Terjual</div>
+      <div class="kpi-value">69 unit</div>
+      <div class="kpi-sub">Total semua iklan</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-label">Iklan Dilihat</div>
+      <div class="kpi-value">34,2k</div>
+      <div class="kpi-sub">Tayangan semua iklan</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-label">Jumlah Klik</div>
+      <div class="kpi-value">2.000</div>
+      <div class="kpi-sub">Semua iklan aktif</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-label">Pesanan</div>
+      <div class="kpi-value">40</div>
+      <div class="kpi-sub">Dari dashboard Shopee</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-label">Persentase Klik (CTR)</div>
+      <div class="kpi-value">5,76%</div>
+      <div class="kpi-sub">Rata-rata semua iklan</div>
+    </div>
+  </div>
+
+  <!-- TABLE -->
+  <p class="section-eyebrow">Performa per Iklan</p>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Nama Iklan</th>
+          <th>Periode</th>
+          <th>Status</th>
+          <th class="r">Dilihat</th>
+          <th class="r">Klik</th>
+          <th class="r">CTR</th>
+          <th class="r">Terjual</th>
+          <th class="r">Pesanan</th>
+          <th class="r">Omzet</th>
+          <th class="r">Biaya</th>
+          <th class="r">ROAS</th>
+          <th>ACOS</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Nara Prayer Set -->
+        <tr>
+          <td>
+            <div class="prod-name">Nara Prayer Set</div>
+            <div class="prod-sub">Mukena Travel Mini Pouch</div>
+            <div class="voucher-pill">🏷 Voucher Rp 318.306 · Rp 2.072.500</div>
+          </td>
+          <td class="mono" style="color:var(--ink3);font-size:11px">20 Jun – 15 Jul</td>
+          <td><span class="badge bg-green"><span class="badge-dot"></span>Berjalan</span></td>
+          <td class="r mono">15.650</td>
+          <td class="r mono">922</td>
+          <td class="r mono">5,89%</td>
+          <td class="r mono">30</td>
+          <td class="r mono">18</td>
+          <td class="r mono" style="white-space:nowrap">Rp 4.057.000</td>
+          <td class="r mono" style="white-space:nowrap">Rp 647.000</td>
+          <td class="r"><span class="roas roas-5">6,27x</span></td>
+          <td>
+            <div class="acos-wrap">
+              <div class="acos-bg"><div class="acos-fill acos-ok" style="width:16%"></div></div>
+              <span class="acos-val">15,95%</span>
+            </div>
+          </td>
+        </tr>
+        <!-- NALA ACTIVE SHORT -->
+        <tr>
+          <td>
+            <div class="prod-name">NALA ACTIVE SHORT Bergo</div>
+            <div class="prod-sub">Hijab Instant | Tencel</div>
+            <div class="voucher-pill">🏷 Voucher Rp 30.917 · Rp 310.050</div>
+          </td>
+          <td class="mono" style="color:var(--ink3);font-size:11px">30 Jun – 9 Jul</td>
+          <td><span class="badge bg-ink">Berakhir</span></td>
+          <td class="r mono">10.011</td>
+          <td class="r mono">543</td>
+          <td class="r mono">5,42%</td>
+          <td class="r mono">15</td>
+          <td class="r mono">10</td>
+          <td class="r mono" style="white-space:nowrap">Rp 2.359.400</td>
+          <td class="r mono" style="white-space:nowrap">Rp 551.952</td>
+          <td class="r"><span class="roas roas-3">4,27x</span></td>
+          <td>
+            <div class="acos-wrap">
+              <div class="acos-bg"><div class="acos-fill acos-warn" style="width:23%"></div></div>
+              <span class="acos-val">23,39%</span>
+            </div>
+          </td>
+        </tr>
+        <!-- NAIRA SHORT -->
+        <tr>
+          <td>
+            <div class="prod-name">NAIRA SHORT Bergo</div>
+            <div class="prod-sub">Hijab Instant | Tencel</div>
+            <div class="voucher-pill">🏷 Voucher Rp 154.658 · Rp 1.852.350</div>
+          </td>
+          <td class="mono" style="color:var(--ink3);font-size:11px">30 Mei – 9 Jun</td>
+          <td><span class="badge bg-ink">Berakhir</span></td>
+          <td class="r mono">5.237</td>
+          <td class="r mono">350</td>
+          <td class="r mono">6,68%</td>
+          <td class="r mono">15</td>
+          <td class="r mono">5</td>
+          <td class="r mono" style="white-space:nowrap">Rp 2.340.400</td>
+          <td class="r mono" style="white-space:nowrap">Rp 379.924</td>
+          <td class="r"><span class="roas roas-5">6,16x</span></td>
+          <td>
+            <div class="acos-wrap">
+              <div class="acos-bg"><div class="acos-fill acos-ok" style="width:16%"></div></div>
+              <span class="acos-val">16,23%</span>
+            </div>
+          </td>
+        </tr>
+        <!-- Pashmina Lembayung -->
+        <tr>
+          <td>
+            <div class="prod-name">Pashmina Instant Lembayung</div>
+            <div class="prod-sub">Oval Airy Feel Spandex</div>
+          </td>
+          <td class="mono" style="color:var(--ink3);font-size:11px">12 Jun – 19 Jun</td>
+          <td><span class="badge bg-ink">Berakhir</span></td>
+          <td class="r mono">3.286</td>
+          <td class="r mono">153</td>
+          <td class="r mono">4,66%</td>
+          <td class="r mono">9</td>
+          <td class="r mono">1</td>
+          <td class="r mono" style="white-space:nowrap">Rp 905.000</td>
+          <td class="r mono" style="white-space:nowrap">Rp 200.000</td>
+          <td class="r"><span class="roas roas-3">4,53x</span></td>
+          <td>
+            <div class="acos-wrap">
+              <div class="acos-bg"><div class="acos-fill acos-warn" style="width:22%"></div></div>
+              <span class="acos-val">22,10%</span>
+            </div>
+          </td>
+        </tr>
+        <!-- Total -->
+        <tr class="total-row">
+          <td colspan="3">Total Keseluruhan</td>
+          <td class="r mono">34.184</td>
+          <td class="r mono">1.968</td>
+          <td class="r mono">—</td>
+          <td class="r mono">69</td>
+          <td class="r mono">40 <span style="font-size:10px;color:var(--ink3);font-weight:400">(dashboard)</span></td>
+          <td class="r mono" style="white-space:nowrap">Rp 9.661.800</td>
+          <td class="r mono" style="white-space:nowrap">Rp 1.778.876</td>
+          <td class="r"><span class="roas roas-5">5,43x</span></td>
+          <td><span style="font-size:11px;color:var(--ink2)">~18,4%</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="data-note">
+    Angka Iklan Dilihat, Klik, CTR, Pesanan, Produk Terjual, Penjualan, dan ROAS keseluruhan bersumber dari dashboard Shopee Seller Centre (periode 20/05 – 19/06). Biaya per iklan dari file CSV. Pesanan per iklan menggunakan kolom Konversi Langsung dari CSV (total 34), sementara angka 40 dari dashboard tidak dapat dibreakdown per iklan.
+  </div>
+
+  <!-- INSIGHTS -->
+  <p class="section-eyebrow">Analisis &amp; Insight</p>
+  <div class="insight-grid">
+    <div class="insight-card green">
+      <div class="insight-title">Nara Prayer Set adalah produk unggulan periode ini</div>
+      <div class="insight-body">ROAS 6,27x dengan ACOS 15,95% adalah performa terbaik dari semua iklan. Dengan 922 klik dan 30 produk terjual, iklan ini juga masih aktif berjalan hingga 15 Juli sehingga angkanya akan terus bertambah. Kontribusi omzet terbesar di antara 4 iklan sekaligus CTR tertinggi kedua di 5,89%.</div>
+    </div>
+    <div class="insight-card green">
+      <div class="insight-title">NAIRA SHORT Bergo — CTR tertinggi dan konversi efisien</div>
+      <div class="insight-body">CTR 6,68% adalah tertinggi di antara semua iklan, dan Add to Cart Rate mencapai 16,29%. Meskipun hanya berjalan 10 hari, iklan ini berhasil mencatatkan ROAS 6,16x. Produk ini menunjukkan demand yang kuat dan sangat layak mendapat durasi lebih panjang di periode berikutnya.</div>
+    </div>
+    <div class="insight-card blue">
+      <div class="insight-title">NALA ACTIVE SHORT — kontribusi solid, efisiensi perlu dijaga</div>
+      <div class="insight-body">Omzet terbesar kedua di Rp 2,36 juta dengan ROAS 4,27x dan ACOS 23,39%. Biaya Rp 551.952 cukup besar dibanding dua iklan lainnya. Masih dalam range positif, namun perlu dimonitor agar ACOS tidak terus naik di periode berikutnya saat iklan dijadwalkan kembali mulai 30 Juni.</div>
+    </div>
+    <div class="insight-card amber">
+      <div class="insight-title">Pashmina Lembayung — periode perdana terlalu pendek untuk dinilai</div>
+      <div class="insight-body">Hanya 8 hari tayang dengan 1 konversi langsung dari 153 klik. ROAS keseluruhan 4,53x masih positif karena ada konversi assisted (9 produk terjual), namun ACOS Langsung 62,89% menunjukkan algoritma belum sempat belajar mengoptimalkan distribusi iklan. Perlu uji perpanjangan sebelum diputuskan untuk dilanjutkan atau dihentikan.</div>
+    </div>
+    <div class="insight-card blue">
+      <div class="insight-title">Voucher berkontribusi signifikan di dua iklan teratas</div>
+      <div class="insight-body">Transaksi yang menggunakan voucher di Nara Prayer Set mencapai Rp 2.072.500 dari total omzet Rp 4.057.000, dan NAIRA SHORT Bergo Rp 1.852.350 dari Rp 2.340.400. Ini menunjukkan segmen pembeli kedua produk cukup responsif terhadap insentif harga, yang bisa menjadi pertimbangan saat menyusun strategi promosi periode berikutnya.</div>
+    </div>
+  </div>
+
+  <!-- REKOMENDASI -->
+  <p class="section-eyebrow">Rekomendasi Periode Berikutnya</p>
+  <div class="rec-list">
+    <div class="rec-item">
+      <div class="rec-num">1</div>
+      <div class="rec-text"><strong>Pertahankan Nara Prayer Set yang sedang berjalan.</strong> Pastikan iklan tetap aktif melewati window gajian akhir bulan (25 Juni) dan awal Juli (1–5 Juli). Monitor ACOS mingguan agar tidak melewati 20%.</div>
+    </div>
+    <div class="rec-item">
+      <div class="rec-num">2</div>
+      <div class="rec-text"><strong>Aktifkan kembali NAIRA SHORT Bergo dengan durasi minimal 14 hari.</strong> CTR 6,68% dan ROAS 6,16x adalah sinyal kuat bahwa produk ini punya demand tinggi. Durasi lebih panjang akan memberi ruang bagi algoritma untuk mengoptimalkan lebih jauh.</div>
+    </div>
+    <div class="rec-item">
+      <div class="rec-num">3</div>
+      <div class="rec-text"><strong>Monitor NALA ACTIVE SHORT yang dijadwalkan mulai 30 Juni.</strong> Pastikan aktif di window awal Juli (1–5) untuk memanfaatkan momentum gajian. Jika ACOS di periode sebelumnya sudah di atas 23%, evaluasi bid sebelum diaktifkan.</div>
+    </div>
+    <div class="rec-item">
+      <div class="rec-num">4</div>
+      <div class="rec-text"><strong>Uji Pashmina Lembayung dengan durasi minimal 14 hari</strong> sebelum mengambil keputusan. Jika setelah 14 hari ROAS Langsung masih di bawah 2x, pertimbangkan evaluasi foto produk, deskripsi, atau harga terlebih dahulu.</div>
+    </div>
+    <div class="rec-item">
+      <div class="rec-num">5</div>
+      <div class="rec-text"><strong>Pertimbangkan menyiapkan voucher untuk Nara Prayer Set dan NAIRA SHORT Bergo</strong> di periode berikutnya, mengingat kedua produk terbukti punya pembeli yang merespons insentif harga dengan baik.</div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span>Laporan dibuat: 20 Juni 2026</span>
+    <span>wearmodesti · Shopee Indonesia · Data: Shopee Seller Centre</span>
+  </div>
+
+</div>
+</body>
+</html>
