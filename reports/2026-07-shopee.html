@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Laporan Iklan Shopee — wearmodesti — Jun–Jul 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg:        #F5F3EE;
+    --surface:   #FDFCFA;
+    --surface2:  #F0EDE7;
+    --border:    #E2DDD6;
+    --border2:   #CEC9C0;
+    --ink:       #1C1A17;
+    --ink2:      #5C5850;
+    --ink3:      #9C968D;
+    --accent:    #C4521A;
+    --accent-l:  #F5E8DF;
+    --green:     #2A6B3C;
+    --green-l:   #E3F0E8;
+    --blue:      #1A5C9C;
+    --blue-l:    #DDE9F5;
+    --amber:     #8C5E00;
+    --amber-l:   #FDF3DC;
+    --red:       #B02020;
+    --red-l:     #FAE8E8;
+    --r:         8px;
+    --r-lg:      14px;
+    --shadow:    0 1px 3px rgba(28,26,23,.08), 0 4px 16px rgba(28,26,23,.04);
+  }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    min-height: 100vh;
+  }
+
+  /* HEADER */
+  .header {
+    background: var(--ink);
+    color: #fff;
+    padding: 0 48px;
+    position: sticky; top: 0; z-index: 100;
+  }
+  .header-inner {
+    max-width: 1120px; margin: 0 auto;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 60px;
+  }
+  .header-brand { display: flex; align-items: center; gap: 12px; }
+  .shopee-dot {
+    width: 28px; height: 28px; border-radius: 50%;
+    background: var(--accent); display: flex; align-items: center;
+    justify-content: center; font-size: 14px; flex-shrink: 0;
+  }
+  .brand-name { font-size: 15px; font-weight: 600; letter-spacing: -.02em; color: #fff; }
+  .brand-sub  { font-size: 11px; color: rgba(255,255,255,.45); margin-top: 1px; }
+  .period-badge {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px; color: rgba(255,255,255,.55);
+    background: rgba(255,255,255,.08);
+    border: 1px solid rgba(255,255,255,.12);
+    padding: 5px 12px; border-radius: 20px;
+  }
+
+  /* LAYOUT */
+  .page { max-width: 1120px; margin: 0 auto; padding: 40px 48px 80px; }
+
+  /* SECTION */
+  .section-eyebrow {
+    font-size: 10px; font-weight: 600; letter-spacing: .1em;
+    text-transform: uppercase; color: var(--ink3);
+    margin-bottom: 14px; margin-top: 44px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .section-eyebrow::after {
+    content: ''; flex: 1; height: 1px; background: var(--border);
+  }
+  .section-eyebrow:first-child { margin-top: 0; }
+
+  /* EXEC SUMMARY */
+  .exec-summary {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--r-lg);
+    padding: 22px 26px;
+    box-shadow: var(--shadow);
+    font-size: 14px;
+    color: var(--ink2);
+    line-height: 1.75;
+    border-left: 3px solid var(--accent);
+  }
+  .exec-summary strong { color: var(--ink); }
+
+  /* KPI GRID */
+  .kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+  }
+  .kpi-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--r-lg);
+    padding: 20px 22px;
+    box-shadow: var(--shadow);
+    transition: transform .15s, box-shadow .15s;
+  }
+  .kpi-card:hover { transform: translateY(-2px); box-shadow: 0 4px 20px rgba(28,26,23,.1); }
+  .kpi-card.featured { background: var(--ink); border-color: var(--ink); }
+  .kpi-card.featured .kpi-label { color: rgba(255,255,255,.5); }
+  .kpi-card.featured .kpi-value { color: #fff; }
+  .kpi-card.featured .kpi-sub { color: rgba(255,255,255,.4); }
+  .kpi-label {
+    font-size: 11px; font-weight: 500; color: var(--ink3);
+    margin-bottom: 8px; letter-spacing: .01em;
+  }
+  .kpi-value {
+    font-family: 'DM Mono', monospace;
+    font-size: 26px; font-weight: 500; color: var(--ink);
+    line-height: 1; letter-spacing: -.02em;
+  }
+  .kpi-value.green  { color: var(--green); }
+  .kpi-value.amber  { color: var(--amber); }
+  .kpi-sub { font-size: 11px; color: var(--ink3); margin-top: 5px; }
+
+  /* KPI DIVIDER */
+  .kpi-section-label {
+    font-size: 10px; font-weight: 600; letter-spacing: .08em;
+    text-transform: uppercase; color: var(--ink3);
+    margin-bottom: 10px; margin-top: 20px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .kpi-section-label::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+  .kpi-section-label:first-of-type { margin-top: 0; }
+
+  /* TABLE */
+  .table-wrap {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--r-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+  }
+  table { width: 100%; border-collapse: collapse; }
+  thead tr { background: var(--surface2); }
+  th {
+    font-size: 10px; font-weight: 600; letter-spacing: .07em;
+    text-transform: uppercase; color: var(--ink3);
+    padding: 11px 16px; text-align: left; white-space: nowrap;
+    border-bottom: 1px solid var(--border);
+  }
+  th.r, td.r { text-align: right; }
+  td {
+    padding: 14px 16px; font-size: 13px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: middle; color: var(--ink);
+  }
+  tr:last-child td { border-bottom: none; }
+  tbody tr:hover td { background: var(--surface2); }
+  tr.total-row td {
+    background: var(--surface2); font-weight: 600;
+    border-top: 2px solid var(--border2);
+    font-size: 13px;
+  }
+  tr.divider-row td {
+    background: var(--surface2);
+    border-top: 2px solid var(--border2);
+    border-bottom: 1px solid var(--border2);
+    padding: 8px 16px;
+  }
+  tr.store-row td { background: rgba(221,233,245,.25); }
+  tr.store-row:hover td { background: rgba(221,233,245,.45); }
+  .prod-name { font-weight: 500; line-height: 1.35; }
+  .prod-sub  { font-size: 11px; color: var(--ink3); margin-top: 2px; }
+  .mono { font-family: 'DM Mono', monospace; font-size: 12px; }
+
+  /* BADGES */
+  .badge {
+    display: inline-flex; align-items: center; gap: 4px;
+    font-size: 10px; font-weight: 600; letter-spacing: .03em;
+    padding: 3px 8px; border-radius: 20px; white-space: nowrap;
+  }
+  .badge-dot { width: 5px; height: 5px; border-radius: 50%; background: currentColor; }
+  .bg-green  { background: var(--green-l); color: var(--green); }
+  .bg-ink    { background: var(--surface2); color: var(--ink2); }
+  .bg-blue   { background: var(--blue-l); color: var(--blue); }
+
+  /* ROAS PILL */
+  .roas {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px; font-weight: 500;
+    padding: 3px 8px; border-radius: 6px; white-space: nowrap;
+  }
+  .roas-5  { background: var(--green-l); color: var(--green); }
+  .roas-3  { background: var(--blue-l);  color: var(--blue); }
+  .roas-1  { background: var(--amber-l); color: var(--amber); }
+  .roas-0  { background: var(--red-l);   color: var(--red); }
+
+  /* ACOS BAR */
+  .acos-wrap { display: flex; align-items: center; gap: 8px; }
+  .acos-bg   { flex: 1; height: 3px; background: var(--border); border-radius: 2px; min-width: 48px; }
+  .acos-fill { height: 3px; border-radius: 2px; }
+  .acos-good { background: var(--green); }
+  .acos-ok   { background: var(--blue); }
+  .acos-warn { background: #D4891A; }
+  .acos-bad  { background: var(--red); }
+  .acos-val  { font-family: 'DM Mono', monospace; font-size: 11px; white-space: nowrap; }
+  .acos-val.bad { color: var(--red); font-weight: 500; }
+  .acos-val.warn { color: var(--amber); font-weight: 500; }
+
+  /* VOUCHER PILL */
+  .voucher-pill {
+    display: inline-flex; align-items: center; gap: 4px;
+    font-size: 10px; font-weight: 500;
+    background: var(--amber-l); color: var(--amber);
+    padding: 2px 7px; border-radius: 10px; margin-top: 3px;
+  }
+
+  /* ALERT TAG */
+  .alert-tag {
+    display: inline-flex; align-items: center; gap: 4px;
+    font-size: 10px; font-weight: 600;
+    padding: 2px 7px; border-radius: 10px; margin-top: 3px;
+    white-space: nowrap;
+  }
+  .alert-red   { background: var(--red-l); color: var(--red); }
+  .alert-amber { background: var(--amber-l); color: var(--amber); }
+
+  /* INSIGHTS */
+  .insight-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .insight-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--r-lg);
+    padding: 20px 22px;
+    box-shadow: var(--shadow);
+    border-left: 3px solid var(--border2);
+  }
+  .insight-card.green  { border-left-color: var(--green); }
+  .insight-card.amber  { border-left-color: #D4891A; }
+  .insight-card.red    { border-left-color: var(--red); }
+  .insight-card.blue   { border-left-color: var(--blue); }
+  .insight-card.full   { grid-column: 1 / -1; }
+  .insight-eyebrow {
+    font-size: 9px; font-weight: 700; letter-spacing: .1em;
+    text-transform: uppercase; margin-bottom: 5px;
+  }
+  .insight-eyebrow.good  { color: var(--green); }
+  .insight-eyebrow.warn  { color: var(--amber); }
+  .insight-eyebrow.bad   { color: var(--red); }
+  .insight-eyebrow.info  { color: var(--blue); }
+  .insight-title { font-size: 13px; font-weight: 600; margin-bottom: 6px; line-height: 1.35; }
+  .insight-body  { font-size: 12px; color: var(--ink2); line-height: 1.65; }
+  .insight-body strong { color: var(--ink); }
+
+  /* BUDGET CALLOUT */
+  .budget-callout {
+    background: var(--red-l);
+    border: 1px solid #E8B8B8;
+    border-radius: var(--r);
+    padding: 12px 16px;
+    margin-top: 10px;
+    font-size: 12px;
+    color: var(--red);
+    line-height: 1.6;
+  }
+  .budget-callout strong { color: var(--red); }
+
+  /* RECOMMENDATION */
+  .rec-list { display: flex; flex-direction: column; gap: 8px; }
+  .rec-item {
+    display: flex; gap: 14px; align-items: flex-start;
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: var(--r); padding: 14px 16px;
+    box-shadow: var(--shadow);
+  }
+  .rec-num {
+    width: 24px; height: 24px; border-radius: 50%;
+    background: var(--ink); color: #fff;
+    font-size: 11px; font-weight: 700;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0; margin-top: 1px;
+  }
+  .rec-text { font-size: 13px; color: var(--ink); line-height: 1.6; }
+  .rec-text strong { color: var(--ink); }
+
+  /* DATA NOTE */
+  .data-note {
+    background: var(--blue-l); border: 1px solid #B5CDE8;
+    border-radius: var(--r); padding: 12px 16px;
+    font-size: 12px; color: var(--blue); line-height: 1.6;
+    margin-top: 12px;
+  }
+
+  /* FOOTER */
+  .footer {
+    margin-top: 56px; padding-top: 24px;
+    border-top: 1px solid var(--border);
+    display: flex; justify-content: space-between;
+    font-size: 11px; color: var(--ink3);
+    font-family: 'DM Mono', monospace;
+  }
+
+  @media (max-width: 768px) {
+    .page { padding: 24px 20px 60px; }
+    .header { padding: 0 20px; }
+    .kpi-grid { grid-template-columns: repeat(2, 1fr); }
+    .insight-grid { grid-template-columns: 1fr; }
+    .insight-card.full { grid-column: 1; }
+    .table-wrap { overflow-x: auto; }
+  }
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-inner">
+    <div class="header-brand">
+      <div class="shopee-dot">🛍</div>
+      <div>
+        <div class="brand-name">wearmodesti</div>
+        <div class="brand-sub">Laporan Kinerja Iklan · Shopee Indonesia</div>
+      </div>
+    </div>
+    <div class="period-badge">20 Jun – 19 Jul 2026</div>
+  </div>
+</header>
+
+<div class="page">
+
+  <!-- RINGKASAN EKSEKUTIF -->
+  <p class="section-eyebrow">Ringkasan Eksekutif</p>
+  <div class="exec-summary">
+    Periode 20 Juni hingga 19 Juli 2026 mencakup <strong>5 iklan produk</strong> dan <strong>1 Iklan Toko</strong> aktif dari lini modest wear dan hijab wearmodesti. Total belanja iklan keseluruhan sebesar <strong>Rp 1.641.317</strong> menghasilkan penjualan gabungan sebesar <strong>Rp 7.428.850</strong> dengan ROAS iklan produk <strong>4,92x</strong> dan Iklan Toko <strong>2,77x</strong>. Periode ini juga mencatat pertama kalinya Iklan Toko menghasilkan konversi, meski efisiensinya masih perlu ditingkatkan. Di sisi lain, satu iklan produk baru (AURORA) sama sekali tidak terserap budgetnya oleh algoritma Shopee, sebuah sinyal yang perlu ditindaklanjuti sebelum iklan ini diaktifkan kembali.
+  </div>
+
+  <!-- KPI -->
+  <p class="section-eyebrow">Performa Seluruh Iklan</p>
+
+  <div class="kpi-section-label">Iklan Produk</div>
+  <div class="kpi-grid">
+    <div class="kpi-card featured">
+      <div class="kpi-label">Penjualan dari Iklan</div>
+      <div class="kpi-value">Rp 6,6 jt</div>
+      <div class="kpi-sub">Total omzet 5 iklan produk</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-label">ROAS Iklan Produk</div>
+      <div class="kpi-value green">4,92x</div>
+      <div class="kpi-sub">Return on Ad Spend</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-label">Total Biaya Iklan Produk</div>
+      <div class="kpi-value">Rp 1,34 jt</div>
+      <div class="kpi-sub">Dari 5 iklan produk</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-label">Produk Terjual</div>
+      <div class="kpi-value">48 unit</div>
+      <div class="kpi-sub">Total semua iklan produk</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-label">Iklan Dilihat</div>
+      <div class="kpi-value">41k</div>
+      <div class="kpi-sub">Tayangan semua iklan produk</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-label">Jumlah Klik</div>
+      <div class="kpi-value">2.200</div>
+      <div class="kpi-sub">Semua iklan produk</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-label">Pesanan</div>
+      <div class="kpi-value">27</div>
+      <div class="kpi-sub">Dari dashboard Shopee</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-label">Persentase Klik (CTR)</div>
+      <div class="kpi-value">5,31%</div>
+      <div class="kpi-sub">Rata-rata semua iklan produk</div>
+    </div>
+  </div>
+
+  <div class="kpi-section-label" style="margin-top:20px">Iklan Toko</div>
+  <div class="kpi-grid">
+    <div class="kpi-card" style="border-left: 3px solid var(--blue);">
+      <div class="kpi-label">Penjualan dari Iklan Toko</div>
+      <div class="kpi-value">Rp 830.200</div>
+      <div class="kpi-sub">Pertama kali ada konversi</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-label">ROAS Iklan Toko</div>
+      <div class="kpi-value amber">2,77x</div>
+      <div class="kpi-sub">Masih di bawah threshold ideal</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-label">Biaya Iklan Toko</div>
+      <div class="kpi-value">Rp 300.000</div>
+      <div class="kpi-sub">Budget flat bulanan</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-label">Produk Terjual · Pesanan</div>
+      <div class="kpi-value">5 · 3</div>
+      <div class="kpi-sub">Dari 986 klik · CTR 5,01%</div>
+    </div>
+  </div>
+
+  <!-- TABLE -->
+  <p class="section-eyebrow">Performa per Iklan</p>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Nama Iklan</th>
+          <th>Periode</th>
+          <th class="r">Dilihat</th>
+          <th class="r">Klik</th>
+          <th class="r">CTR</th>
+          <th class="r">ATC</th>
+          <th class="r">Terjual</th>
+          <th class="r">Pesanan</th>
+          <th class="r">Omzet</th>
+          <th class="r">Biaya</th>
+          <th class="r">ROAS</th>
+          <th>ACOS</th>
+        </tr>
+      </thead>
+      <tbody>
+
+        <!-- Nara Prayer Set -->
+        <tr>
+          <td>
+            <div class="prod-name">Nara Prayer Set</div>
+            <div class="prod-sub">Mukena Travel Mini Pouch</div>
+            <div class="voucher-pill">🏷 Voucher Rp 62.770 · Rp 774.300</div>
+          </td>
+          <td class="mono" style="color:var(--ink3);font-size:11px">20 Jun – 15 Jul</td>
+          <td class="r mono">21.130</td>
+          <td class="r mono">1.224</td>
+          <td class="r mono">5,79%</td>
+          <td class="r mono">140</td>
+          <td class="r mono">26</td>
+          <td class="r mono">15</td>
+          <td class="r mono" style="white-space:nowrap">Rp 3.341.650</td>
+          <td class="r mono" style="white-space:nowrap">Rp 630.038</td>
+          <td class="r"><span class="roas roas-5">5,30x</span></td>
+          <td>
+            <div class="acos-wrap">
+              <div class="acos-bg"><div class="acos-fill acos-ok" style="width:19%"></div></div>
+              <span class="acos-val">18,85%</span>
+            </div>
+          </td>
+        </tr>
+
+        <!-- NAIRA SHORT -->
+        <tr>
+          <td>
+            <div class="prod-name">NAIRA SHORT Bergo</div>
+            <div class="prod-sub">Hijab Instant | Tencel</div>
+            <div class="voucher-pill">🏷 Voucher Rp 31.295 · Rp 795.000</div>
+          </td>
+          <td class="mono" style="color:var(--ink3);font-size:11px">8 Jul – 19 Jul</td>
+          <td class="r mono">7.032</td>
+          <td class="r mono">438</td>
+          <td class="r mono">6,23%</td>
+          <td class="r mono">36</td>
+          <td class="r mono">14</td>
+          <td class="r mono">5</td>
+          <td class="r mono" style="white-space:nowrap">Rp 2.286.000</td>
+          <td class="r mono" style="white-space:nowrap">Rp 298.816</td>
+          <td class="r"><span class="roas roas-5">7,65x</span></td>
+          <td>
+            <div class="acos-wrap">
+              <div class="acos-bg"><div class="acos-fill acos-good" style="width:13%"></div></div>
+              <span class="acos-val">13,07%</span>
+            </div>
+          </td>
+        </tr>
+
+        <!-- NALA ACTIVE SHORT -->
+        <tr>
+          <td>
+            <div class="prod-name">NALA ACTIVE SHORT Bergo</div>
+            <div class="prod-sub">Hijab Instant | Tencel</div>
+            <div class="voucher-pill">🏷 Voucher Rp 7.553 · Rp 151.050</div>
+            <div class="alert-tag alert-amber">⚠ ACOS Langsung 79,92%</div>
+          </td>
+          <td class="mono" style="color:var(--ink3);font-size:11px">30 Jun – 9 Jul</td>
+          <td class="r mono">8.140</td>
+          <td class="r mono">305</td>
+          <td class="r mono">3,75%</td>
+          <td class="r mono">17</td>
+          <td class="r mono">5</td>
+          <td class="r mono">2</td>
+          <td class="r mono" style="white-space:nowrap">Rp 793.250</td>
+          <td class="r mono" style="white-space:nowrap">Rp 241.441</td>
+          <td class="r"><span class="roas roas-3">3,29x</span></td>
+          <td>
+            <div class="acos-wrap">
+              <div class="acos-bg"><div class="acos-fill acos-warn" style="width:30%"></div></div>
+              <span class="acos-val warn">30,44%</span>
+            </div>
+          </td>
+        </tr>
+
+        <!-- Peony Square -->
+        <tr>
+          <td>
+            <div class="prod-name">Peony Square Hijab Segiempat</div>
+            <div class="prod-sub">Polycotton Premium 110x110 · Plat Gold</div>
+            <div class="alert-tag alert-red">⛔ ROAS sangat rendah</div>
+          </td>
+          <td class="mono" style="color:var(--ink3);font-size:11px">6 Jul – 16 Jul</td>
+          <td class="r mono">3.645</td>
+          <td class="r mono">174</td>
+          <td class="r mono">4,77%</td>
+          <td class="r mono">23</td>
+          <td class="r mono">3</td>
+          <td class="r mono">2</td>
+          <td class="r mono" style="white-space:nowrap">Rp 177.750</td>
+          <td class="r mono" style="white-space:nowrap">Rp 148.633</td>
+          <td class="r"><span class="roas roas-1">1,20x</span></td>
+          <td>
+            <div class="acos-wrap">
+              <div class="acos-bg"><div class="acos-fill acos-bad" style="width:84%"></div></div>
+              <span class="acos-val bad">83,62%</span>
+            </div>
+          </td>
+        </tr>
+
+        <!-- AURORA -->
+        <tr>
+          <td>
+            <div class="prod-name">AURORA Hijab Motif Voal SERUNI</div>
+            <div class="prod-sub">Segi Empat Premium 115x115</div>
+            <div class="alert-tag alert-red">⛔ Budget tidak terserap · 0 konversi</div>
+          </td>
+          <td class="mono" style="color:var(--ink3);font-size:11px">25 Jun – 6 Jul</td>
+          <td class="r mono">1.020</td>
+          <td class="r mono">34</td>
+          <td class="r mono">3,33%</td>
+          <td class="r mono">1</td>
+          <td class="r mono">0</td>
+          <td class="r mono">0</td>
+          <td class="r mono" style="white-space:nowrap">Rp 0</td>
+          <td class="r mono" style="white-space:nowrap">Rp 22.389</td>
+          <td class="r"><span class="roas roas-0">0x</span></td>
+          <td>
+            <div class="acos-wrap">
+              <span style="font-size:11px;color:var(--red);font-weight:500">Tidak ada penjualan</span>
+            </div>
+          </td>
+        </tr>
+
+        <!-- Subtotal Iklan Produk -->
+        <tr class="total-row">
+          <td colspan="2">Subtotal Iklan Produk</td>
+          <td class="r mono">40.967</td>
+          <td class="r mono">2.175</td>
+          <td class="r mono">—</td>
+          <td class="r mono">217</td>
+          <td class="r mono">48</td>
+          <td class="r mono">27 <span style="font-size:10px;color:var(--ink3);font-weight:400">(dashboard)</span></td>
+          <td class="r mono" style="white-space:nowrap">Rp 6.598.650</td>
+          <td class="r mono" style="white-space:nowrap">Rp 1.341.317</td>
+          <td class="r"><span class="roas roas-3">4,92x</span></td>
+          <td><span style="font-size:11px;color:var(--ink2)">~20,3%</span></td>
+        </tr>
+
+        <!-- Divider Iklan Toko -->
+        <tr class="divider-row">
+          <td colspan="12">
+            <span style="font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--blue)">Iklan Toko</span>
+          </td>
+        </tr>
+
+        <!-- Iklan Toko -->
+        <tr class="store-row">
+          <td>
+            <div class="prod-name">Iklan Toko</div>
+            <div class="prod-sub">Manual Bidding · Semua Kata Pencarian</div>
+          </td>
+          <td class="mono" style="color:var(--ink3);font-size:11px">20 Jun – 19 Jul</td>
+          <td class="r mono">19.693</td>
+          <td class="r mono">986</td>
+          <td class="r mono">5,01%</td>
+          <td class="r mono" style="color:var(--ink3)">—</td>
+          <td class="r mono">5</td>
+          <td class="r mono">3</td>
+          <td class="r mono" style="white-space:nowrap">Rp 830.200</td>
+          <td class="r mono" style="white-space:nowrap">Rp 300.000</td>
+          <td class="r"><span class="roas roas-1">2,77x</span></td>
+          <td>
+            <div class="acos-wrap">
+              <div class="acos-bg"><div class="acos-fill acos-bad" style="width:36%"></div></div>
+              <span class="acos-val warn">36,14%</span>
+            </div>
+          </td>
+        </tr>
+
+        <!-- Grand Total -->
+        <tr class="total-row">
+          <td colspan="2">Total Keseluruhan</td>
+          <td class="r mono">60.660</td>
+          <td class="r mono">3.161</td>
+          <td class="r mono">—</td>
+          <td class="r mono">—</td>
+          <td class="r mono">53</td>
+          <td class="r mono">30</td>
+          <td class="r mono" style="white-space:nowrap">Rp 7.428.850</td>
+          <td class="r mono" style="white-space:nowrap">Rp 1.641.317</td>
+          <td class="r"><span class="roas roas-3">4,53x</span></td>
+          <td><span style="font-size:11px;color:var(--ink2)">~22,1%</span></td>
+        </tr>
+
+      </tbody>
+    </table>
+  </div>
+  <div class="data-note">
+    Angka KPI keseluruhan (Dilihat, Klik, CTR, Pesanan, Produk Terjual, Penjualan, ROAS) bersumber dari dashboard Shopee Seller Centre periode 20/06–19/07. Biaya dan omzet per iklan dari file CSV. Pesanan per iklan menggunakan kolom Konversi Langsung CSV (total 24), sementara angka 27 dari dashboard tidak dapat dibreakdown per iklan. Data Pashmina Lembayung (1 tayangan, 0 biaya) dikecualikan karena merupakan sisa periode sebelumnya.
+  </div>
+
+  <!-- INSIGHTS -->
+  <p class="section-eyebrow">Analisis &amp; Insight</p>
+  <div class="insight-grid">
+
+    <div class="insight-card green">
+      <div class="insight-eyebrow good">Yang Berjalan Baik</div>
+      <div class="insight-title">NAIRA SHORT Bergo — bintang baru periode ini</div>
+      <div class="insight-body">ROAS <strong>7,65x</strong> dan ACOS <strong>13,07%</strong> adalah performa terbaik di seluruh portofolio, bahkan melampaui Nara Prayer Set. Hanya berjalan <strong>12 hari</strong> (8–19 Juli) namun menghasilkan 14 produk terjual dan CTR 6,23% tertinggi di antara semua iklan. Ini adalah kandidat prioritas utama untuk periode berikutnya dengan durasi lebih panjang.</div>
+    </div>
+
+    <div class="insight-card blue">
+      <div class="insight-eyebrow info">Yang Perlu Dipantau</div>
+      <div class="insight-title">Nara Prayer Set — konsisten tapi efisiensi mulai turun</div>
+      <div class="insight-body">ROAS turun dari <strong>6,27x</strong> (periode lalu) menjadi <strong>5,30x</strong>, dan ACOS naik dari 15,95% ke 18,85%. Masih sehat, namun tren ini perlu diperhatikan. Add to Cart Rate 11,44% adalah tertinggi di antara semua iklan, artinya demand tetap kuat. Kemungkinan ada peningkatan kompetisi di kategori mukena travel.</div>
+    </div>
+
+    <div class="insight-card red full">
+      <div class="insight-eyebrow bad">Masalah Utama — Budget Tidak Terserap</div>
+      <div class="insight-title">AURORA 0 konversi: budget Rp 25.000/hari hanya terpakai rata-rata Rp 1.866/hari oleh Shopee</div>
+      <div class="insight-body">
+        Total biaya hanya <strong>Rp 22.389 dari potensi Rp 300.000</strong> (Rp 25.000/hari × 12 hari). Ini bukan masalah budget yang kurang, tapi sebaliknya: algoritma Shopee GMV Max menilai produk ini <strong>tidak cukup kompetitif</strong> untuk ditampilkan secara agresif, sehingga distribusi iklan ditekan otomatis.
+        <div class="budget-callout">
+          <strong>Mengapa ini bisa terjadi?</strong> Shopee GMV Max mengoptimalkan berdasarkan prediksi konversi. Jika sistem menilai peluang konversi rendah (karena review sedikit, foto kurang menarik dibanding kompetitor, atau harga tidak kompetitif), budget tidak akan dihabiskan meski sudah diset tinggi. <strong>Yang harus dilakukan sebelum iklan AURORA diaktifkan kembali:</strong> (1) Tambah minimal 5–10 review produk, (2) Bandingkan foto utama dengan produk kompetitor di halaman pertama pencarian, (3) Cek apakah harga masih kompetitif di kategori hijab voal motif, (4) Pastikan ada histori penjualan organik yang cukup sebelum diiklankan.
+        </div>
+      </div>
+    </div>
+
+    <div class="insight-card amber">
+      <div class="insight-eyebrow warn">Yang Perlu Dievaluasi</div>
+      <div class="insight-title">NALA ACTIVE SHORT — banyak yang add to cart, sedikit yang beli</div>
+      <div class="insight-body">ROAS <strong>3,29x</strong> dan ACOS 30,44% masih positif, tapi ACOS Langsung <strong>79,92%</strong> adalah sinyal bahwa hampir tidak ada yang langsung beli setelah klik iklan. Dari 305 klik, hanya 17 yang add to cart dan hanya 2 yang konversi langsung. Kemungkinan ada friksi di halaman produk: varian tertentu habis, foto kurang meyakinkan, atau ada gap ekspektasi antara thumbnail dan detail produk.</div>
+    </div>
+
+    <div class="insight-card amber">
+      <div class="insight-eyebrow warn">Yang Perlu Dievaluasi</div>
+      <div class="insight-title">Peony Square — ATC tinggi tapi harga per unit terlalu rendah untuk iklan</div>
+      <div class="insight-body">ROAS <strong>1,20x</strong> dengan ACOS 83,62% adalah yang terburuk di antara iklan produk. Uniknya, Add to Cart Rate 13,22% adalah tertinggi kedua, artinya orang tertarik tapi tidak jadi beli dalam jumlah yang cukup. Dengan estimasi harga per unit sekitar <strong>Rp 59.250</strong>, margin untuk menanggung biaya iklan sangat tipis. Pertimbangkan bundle pricing atau menaikkan harga minimum sebelum diiklankan kembali.</div>
+    </div>
+
+    <div class="insight-card blue">
+      <div class="insight-eyebrow info">Iklan Toko</div>
+      <div class="insight-title">Iklan Toko — pertama kali ada konversi, tapi ACOS masih terlalu tinggi</div>
+      <div class="insight-body">Ini adalah periode pertama Iklan Toko menghasilkan penjualan nyata: <strong>5 produk, Rp 830.200 omzet</strong>. Namun ACOS 36,14% masih jauh di atas threshold efisien. Dengan 986 klik dan hanya 3 pesanan, ada banyak klik yang tidak berakhir konversi. Perlu audit keyword: identifikasi kata pencarian dengan klik tinggi tapi 0 konversi, kurangi bid di sana, dan fokuskan budget ke keyword yang sudah terbukti menghasilkan pesanan.</div>
+    </div>
+
+  </div>
+
+  <!-- REKOMENDASI -->
+  <p class="section-eyebrow">Rekomendasi Periode Berikutnya</p>
+  <div class="rec-list">
+    <div class="rec-item">
+      <div class="rec-num">1</div>
+      <div class="rec-text"><strong>Prioritaskan NAIRA SHORT Bergo dengan durasi minimal 20–25 hari.</strong> ROAS 7,65x adalah terbaik di seluruh portofolio. Aktifkan di awal periode untuk menangkap momentum gajian awal bulan (1–5 Agustus) dan pertahankan hingga akhir bulan (25 Agustus).</div>
+    </div>
+    <div class="rec-item">
+      <div class="rec-num">2</div>
+      <div class="rec-text"><strong>Lanjutkan Nara Prayer Set dan monitor ACOS mingguan.</strong> Jika ACOS menyentuh 22% di tengah periode, evaluasi bid atau pause sementara. Add to Cart Rate 11,44% menunjukkan demand masih kuat, jadi jangan stop sebelum data membuktikan sebaliknya.</div>
+    </div>
+    <div class="rec-item">
+      <div class="rec-num">3</div>
+      <div class="rec-text"><strong>Jangan aktifkan AURORA sebelum ada optimasi produk.</strong> Aktifkan iklan sebelum review cukup dan foto kompetitif hanya akan membuang budget. Urutkan dulu: tambah review, perbaiki foto, baru iklankan. Setelah diaktifkan kembali, pantau apakah budget mulai terserap dalam 3–5 hari pertama.</div>
+    </div>
+    <div class="rec-item">
+      <div class="rec-num">4</div>
+      <div class="rec-text"><strong>NALA ACTIVE SHORT: cek varian stok dan halaman produk sebelum jadwal berikutnya.</strong> Pastikan semua varian tersedia dan foto sesuai ekspektasi pembeli. Jika diaktifkan kembali, pantau Add to Cart Rate vs konversi di 5 hari pertama sebagai indikator awal.</div>
+    </div>
+    <div class="rec-item">
+      <div class="rec-num">5</div>
+      <div class="rec-text"><strong>Peony Square: evaluasi strategi harga sebelum diiklankan kembali.</strong> Dengan harga per unit sekitar Rp 59.250, margin untuk menanggung ACOS yang wajar sangat tipis. Pertimbangkan bundle 2–3 pcs, atau posisikan sebagai produk organik dulu sampai ada cukup review dan penjualan natural.</div>
+    </div>
+    <div class="rec-item">
+      <div class="rec-num">6</div>
+      <div class="rec-text"><strong>Iklan Toko: audit keyword sebelum diperpanjang.</strong> Buka laporan kata pencarian di Seller Centre, identifikasi keyword dengan CTR tinggi tapi 0 konversi, lalu kurangi atau hapus bid di sana. Fokuskan budget ke keyword yang sudah terbukti menghasilkan pesanan di periode ini. Target ACOS ideal di bawah 25%.</div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span>Laporan dibuat: 20 Juli 2026</span>
+    <span>wearmodesti · Shopee Indonesia · Data: Shopee Seller Centre</span>
+  </div>
+
+</div>
+</body>
+</html>
