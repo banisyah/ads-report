@@ -55,4 +55,18 @@ const REPORTS = [
     },
     roasClass: "roas-1",
   },
+  {
+    file: "reports/2026-09-shopee.html",
+    platform: "shopee",
+    period: "Agu – Sep 2026",
+    dateLabel: "20 Agu – 19 Sep 2026",
+    created: "20 Sep 2026",
+    highlights: {
+      revenue: "Rp 4,95 jt",
+      roas: "2,85x",
+      spend: "Rp 1,74 jt",
+      orders: "26",
+    },
+    roasClass: "roas-1",
+  },
 ];
